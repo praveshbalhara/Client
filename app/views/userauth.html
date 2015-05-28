@@ -1,0 +1,58 @@
+<div>
+  
+  <div class = "div_heading_shadow">User CI</div>
+  
+  <!-- Todos input -->
+  <form name="form">
+  	
+    	<input class="textbox" type="text" ng-model="email" ng-change="searchByEmail()" placeholder="Type Email" >
+    	<input class="textbox" type="text" ng-model="url" ng-change="searchByURL()" placeholder="Type URL" >
+		<input  class="btn" type="button" ng-click="clearFilter()" value="Clear Filter">
+		<input  class="btn" type="button" ng-click="previous()" value="<<">
+		<input  class="btn" type="button" ng-click="next()" value=">>">
+		<div class="div_text_shadow"><span>  Out of {{count}}
+			showing {{pageStart + 1}} to  {{pageEnd}}  </span></div>
+		<div ng-show="isProcessing">
+                <span>Processing ...</span>
+        </div>
+	
+    	
+		
+		<div class="CSSTableGenerator" >
+		    <table>
+		    	<tr>
+		    	
+	    		<td ng-click = "sortData(['Authorise_Agent_Name'])" style="width:150px;">Agent Name</td>
+	    		<td ng-click = "sortData(['Authorise_Agent_LoginID'])" style="width:150px;">Email</td>
+	    		<td ng-click = "sortData(['Authorise_Agency'])" style="width:150px;">Agency</td>
+	    		<td ng-click = "sortData(['Authorise_Branch'])" style="width:150px;">Branch</td>
+	    		<td ng-click = "sortData(['Authorise_Sub_URL'])" style="width:150px;">Sub URL</td>
+	    		<td ng-click = "sortData(['Authorise_Hosting_Type'])" style="width:150px;">Hosting Type</td>
+	    		<td ng-click = "sortData(['Authorise_URL_Status'])" style="width:150px;">URL Status</td>
+	    		<td ng-click = "sortData(['Authorise_Environment'])" style="width:150px;">Environment</td>
+	    		<td ng-click = "sortData(['Authorise_Brand'])" style="width:150px;">Brand</td>
+	    		
+	    		<td ng-click = "sortData(['Authorise_Main_URL'])" style="width:150px;">Main URL</td>
+	    		
+
+	    	</tr>
+		      <tr ng-repeat="dataRow in report">
+		      	  
+		      	  <td ng-click = "getdataByColumn(['Authorise_Agent_Name'],'{{dataRow['Authorise_Agent_Name']}}')" style="width:150px;">{{dataRow['Authorise_Agent_Name']}}</td>
+		      	  <td ng-click = "getdataByColumn(['Authorise_Agent_LoginID'],'{{dataRow['Authorise_Agent_LoginID']}}')" style="width:150px;">{{dataRow['Authorise_Agent_LoginID']}}</td>
+		      	  <td ng-click = "getdataByColumn(['Authorise_Agency'],'{{dataRow['Authorise_Agency']}}')" style="width:150px;">{{dataRow['Authorise_Agency']}}</td>
+		      	  <td ng-click = "getdataByColumn(['Authorise_Branch'],'{{dataRow['Authorise_Branch']}}')" style="width:150px;">{{dataRow['Authorise_Branch']}}</td>
+		      	  <td style="width:150px;"><a target="blank"href="http://{{dataRow['Authorise_Sub_URL']}}">{{dataRow['Authorise_Sub_URL']}}</td>
+		      	  <td ng-click = "getdataByColumn(['Authorise_Hosting_Type'],'{{dataRow['Authorise_Hosting_Type']}}')" style="width:150px;">{{dataRow['Authorise_Hosting_Type']}}</td>
+		      	  <td ng-click = "getdataByColumn(['Authorise_URL_Status'],'{{dataRow['Authorise_URL_Status']}}')" style="width:150px;">{{dataRow['Authorise_URL_Status']}}</td>
+		      	  <td ng-click = "getdataByColumn(['Authorise_Environment'],'{{dataRow['Authorise_Environment']}}')" style="width:150px;">{{dataRow['Authorise_Environment']}}</td>
+		      	  <td ng-click = "getdataByColumn(['Authorise_Brand'],'{{dataRow['Authorise_Brand']}}')" style="width:150px;">{{dataRow['Authorise_Brand']}}</td>
+		      	  
+		      	  <td ng-click = "getdataByColumn(['Authorise_Main_URL'],'{{dataRow['Authorise_Main_URL']}}')" style="width:150px;">{{dataRow['Authorise_Main_URL']}}</td>
+		      	  
+
+		      </tr>
+		    </table>
+	    </div>
+	  
+</div>

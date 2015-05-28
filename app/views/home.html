@@ -1,0 +1,12 @@
+
+<div>
+<div ng-controller="NavbarCtrl" class="navbar navbar-static-top">
+	<span ng-if="isAuthenticated()" class="nav nav-pills pull-right">
+		<h3 class="text-muted">Welcome ! {{name}}({{email}})</h3>
+	</span>
+	<span ng-if="!isAuthenticated()" class="nav nav-pills pull-left">
+		<h3 class="text-muted">Please sign up using Sapient email id</h3>
+	</span>
+<div>
+
+</div>

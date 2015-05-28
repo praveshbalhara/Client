@@ -1,0 +1,67 @@
+<div>
+  <div class = "div_heading_shadow">SEO Ticket Console</div>
+  <div></div>
+  <!-- Todos input -->
+  <form name="form">
+    
+		<input class="btn"  type="button" ng-click="refreshData()" value="Refresh All Tickets">
+		<input  class="btn" type="button" ng-click="getUnassigned()" value="Unassigned Tickets">
+		<input  class="btn" type="button" ng-click="getNewWip()" value="New/WIP Tickets">
+		<input  class="btn" type="button" ng-click="getPending()" value="Pending Tickets">
+		<input  class="btn" type="button" ng-click="clearFilter()" value="Clear Filter">
+		<input  class="btn" type="button" ng-click="previous()" value="<<">
+		<input  class="btn" type="button" ng-click="next()" value=">>">
+		<input class="textbox" type="text" ng-model="name" ng-change="searchName()" placeholder="Type to search by any column" >
+		<div class="div_text_shadow"><span>  Out of {{count}}
+			showing {{pageStart + 1}} to  {{pageEnd}}  </span></div>
+		<div ng-show="isProcessing">
+                <span>Processing ...</span>
+        </div>
+		<div class="CSSTableGenerator" >
+		    <table>
+		    	<tr>
+	    		<td ng-click = "sortData(['Request Number'])" style="width:150px;">Request#</td>
+	    		<td ng-click = "sortData(['Request Status'])" style="width:150px;">Request Status</td>
+	    		<td ng-click = "sortData(['Fulfilment Ticket'])" style="width:150px;">Fulfilment#</td>
+	    		<td ng-click = "sortData(['Ticket Age'])" style="width:150px;">Age</td>
+	    		<td ng-click = "sortData(['Fulfilment Ticket Status'])" style="width:150px;">Fulfilment Status</td>
+	    		<td ng-click = "sortData(['Assigned To'])" style="width:150px;">Owner</td>
+	    		<td ng-click = "sortData(['Requested By'])" style="width:150px;">Requester</td>
+	    		<td ng-click = "sortData(['Priority'])" style="width:150px;">Priority</td>
+	    		<td ng-click = "sortData(['Brand'])" style="width:150px;">Brand</td>
+	    		<td ng-click = "sortData(['DateSort'])" style="width:150px;">Created Date</td>
+	    		<td ng-click = "sortData(['Last Modified Date'])" style="width:150px;">Modified Date</td>
+	    		<td ng-click = "sortData(['Region'])" style="width:150px;">Region</td>
+	    		<td ng-click = "sortData(['Triaged Type'])" style="width:150px;">Type</td>
+	    		<td ng-click = "sortData(['Triaged Effort'])" style="width:150px;">Actual Effort</td>
+	    		<td ng-click = "sortData(['Estimated Effort'])" style="width:150px;">Est. Effort</td>
+	    		<td ng-click = "sortData(['Website URL'])" style="width:150px;">Website URL</td>
+	    	</tr>
+		      <tr ng-repeat="dataRow in report">
+		          <td style="width:150px;">
+		          	<a target="blank"href="{{dataRow['Ticket URL']}}">{{dataRow['Request Number']}}</a></td>
+		          <td ng-click = "getdataByAssignedTo(['Request Status'],'{{dataRow['Request Status']}}')" style="width:150px;">{{dataRow['Request Status']}}</td>
+		          <td class="tooltips" style="width:150px;">{{dataRow['Fulfilment Ticket']}}
+					<span><strong>Summary:</strong>  {{dataRow['Subject/Summary']}} <br/> <strong>Description:</strong> {{dataRow['Description/Notes']}}</span></td>
+		          <td ng-click = "getdataByAssignedTo(['Ticket Age'],'{{dataRow['Ticket Age']}}')" style="width:150px;">{{dataRow['Ticket Age']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Fulfilment Ticket Status'],'{{dataRow['Fulfilment Ticket Status']}}')" style="width:150px;">{{dataRow['Fulfilment Ticket Status']}}</td>
+		          
+		          	<td ng-click = "getdataByAssignedTo(['Assigned To'],'{{dataRow['Assigned To']}}')" style="width:150px;">
+		          	{{dataRow['Assigned To']}}</td>
+		          	<td ng-click = "getdataByAssignedTo(['Requested By'],'{{dataRow['Requested By']}}')" style="width:150px;">
+		          	{{dataRow['Requested By']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Priority'],'{{dataRow['Priority']}}')" style="width:150px;">{{dataRow['Priority']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Brand'],'{{dataRow['Brand']}}')" style="width:150px;">{{dataRow['Brand']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Created Date'],'{{dataRow['Created Date']}}')" style="width:150px;">{{dataRow['Created Date']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Last Modified Date'],'{{dataRow['Last Modified Date']}}')" style="width:150px;">{{dataRow['Last Modified Date']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Region'],'{{dataRow['Region']}}')" style="width:150px;">{{dataRow['Region']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Triaged Type'],'{{dataRow['Triaged Type']}}')" style="width:150px;">{{dataRow['Triaged Type']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Triaged Effort'],'{{dataRow['Triaged Effort']}}')" style="width:150px;">{{dataRow['Triaged Effort']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Estimated Effort'],'{{dataRow['Estimated Effort']}}')" style="width:150px;">{{dataRow['Estimated Effort']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Website URL'],'{{dataRow['Website URL']}}')" style="width:150px;">{{dataRow['Website URL']}}</td>
+
+		      </tr>
+		    </table>
+	    </div>
+	  
+</div>

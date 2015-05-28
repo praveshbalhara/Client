@@ -1,0 +1,41 @@
+<div>
+  <div class = "div_heading_shadow">GPS Breach Report</div>
+  
+  <!-- Todos input -->
+  <form name="form">
+    
+		<input  class="btn" type="button" ng-click="clearFilter()" value="Clear Filter">
+		<input  class="btn" type="button" ng-click="previous()" value="<<">
+		<input  class="btn" type="button" ng-click="next()" value=">>">
+		<div class="div_text_shadow"><span>  Out of {{count}}
+			showing {{pageStart + 1}} to  {{pageEnd}}  </span></div>
+		<div ng-show="isProcessing">
+                <span>Processing ...</span>
+        </div>
+		
+		<div class="CSSTableGenerator" >
+		    <table>
+		    	<tr>
+		    	<td ng-click = "sortData(['Assigned To'])" style="width:150px;">Assigned To</td>
+	    		<td ng-click = "sortData(['Alert Type'])" style="width:150px;">Alert Type</td>
+	    		<td ng-click = "sortData(['Category'])" style="width:150px;">Category</td>
+	    		<td ng-click = "sortData(['Ticket'])" style="width:150px;">Ticket</td>
+	    		<td ng-click = "sortData(['Status'])" style="width:150px;">Status</td>
+	    		<td ng-click = "sortData(['Created Date'])" style="width:150px;">Created Date</td>
+	    		<td ng-click = "sortData(['Last Modified Date'])" style="width:150px;">Last Modified Date</td>
+	    		
+	    	</tr>
+		      <tr ng-repeat="dataRow in report">
+		      	  <td ng-click = "getdataByColumn(['Assigned To'],'{{dataRow['Assigned To']}}')" style="width:150px;">{{dataRow['Assigned To']}}</td>
+		      	  <td ng-click = "getdataByColumn(['Alert Type'],'{{dataRow['Alert Type']}}')" style="width:150px;">{{dataRow['Alert Type']}}</td>
+		      	  <td ng-click = "getdataByColumn(['Category'],'{{dataRow['Category']}}')" style="width:150px;">{{dataRow['Category']}}</td>
+		      	  <td style="width:150px;"><a target="blank"href="{{dataRow['Ticket URL']}}">{{dataRow['Ticket']}}</td>
+		      	  <td ng-click = "getdataByColumn(['Status'],'{{dataRow['Status']}}')" style="width:150px;">{{dataRow['Status']}}</td>
+		      	  <td ng-click = "getdataByColumn(['Created Date'],'{{dataRow['Created Date']}}')" style="width:150px;">{{dataRow['Created Date']}}</td>
+		      	  <td ng-click = "getdataByColumn(['Last Modified Date'],'{{dataRow['Last Modified Date']}}')" style="width:150px;">{{dataRow['Last Modified Date']}}</td>
+
+		      </tr>
+		    </table>
+	    </div>
+	  
+</div>

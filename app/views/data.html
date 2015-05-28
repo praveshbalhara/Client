@@ -1,0 +1,47 @@
+<div>
+  <h2>My Data below</h2>
+  
+  <!-- Todos input -->
+  <form name="form" ng-submit = "addData()">
+    <input class="btn"  type="button" ng-click="getDataById()" value="Get Data ById">
+    <input type="text" ng-model="dataId" name="Id" placeholder="Enter id here for search"  size="40"/>
+  <div ng-repeat="dataVal in dataObject" >
+    <table>
+      <tr>
+        <td style="width:75px; border:double"><span>{{dataVal.column}}</span></td>
+        <td><input type="text" ng-model="dataVal.Value" name="dataVal.column" size="30"
+             placeholder="Enter {{dataVal.column}} here"  /> </td>
+       </tr>
+     </table>
+
+    
+    
+  </div> 
+
+  <input class="btn"  type="submit" value="Insert Data">
+  <input class="btn"   type="button" ng-click="updateData()" value="Update Data">
+  <input class="btn"  type="button" ng-click="deleteData()" value="Delete Data">
+  <input class="btn"  type="button" ng-click="refreshData()" value="Refresh Data">
+  <div class="CSSTableGenerator">
+    <table>
+      <tr>
+        <td style="width:75px;">ID</td>
+          <td style="width:100px;">Name</td>
+          <td style="width:75px;">Year</td>
+          <td style="width:75px;">Country</td>
+          <td style="width:75px;">Region</td>
+      </tr>
+      <tr ng-repeat="dataRow in data">
+          <td style="width:75px;">{{dataRow._id}}</td>
+          <td style="width:100px;">{{dataRow.name}}</td>
+          <td style="width:75px;">{{dataRow.year}}</td>
+          <td style="width:75px;">{{dataRow.country}}</td>
+          <td style="width:75px;">{{dataRow.region}}</td>
+      </tr>
+    </table>
+    <!-- <p>
+        <span>{{dataRow._id}} || {{dataRow.name}} || {{dataRow.year}} || {{dataRow.country}} || {{dataRow.region}} || {{dataRow.description}}</span>
+    </p> -->
+    
+  </div>
+</div>

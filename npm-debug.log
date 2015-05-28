@@ -1,0 +1,92 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'angular-ui-grid' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json Client@0.0.0 No description
+6 warn package.json Client@0.0.0 No repository field.
+7 warn package.json Client@0.0.0 No README data
+8 warn package.json karma-chrome-launcher@0.1.7 No README data
+9 verbose readDependencies using package.json deps
+10 verbose cache add [ 'angular-ui-grid', null ]
+11 verbose cache add name=undefined spec="angular-ui-grid" args=["angular-ui-grid",null]
+12 verbose parsed url { protocol: null,
+12 verbose parsed url   slashes: null,
+12 verbose parsed url   auth: null,
+12 verbose parsed url   host: null,
+12 verbose parsed url   port: null,
+12 verbose parsed url   hostname: null,
+12 verbose parsed url   hash: null,
+12 verbose parsed url   search: null,
+12 verbose parsed url   query: null,
+12 verbose parsed url   pathname: 'angular-ui-grid',
+12 verbose parsed url   path: 'angular-ui-grid',
+12 verbose parsed url   href: 'angular-ui-grid' }
+13 silly lockFile bcda7e52-angular-ui-grid angular-ui-grid
+14 verbose lock angular-ui-grid C:\Users\pbalha\AppData\Roaming\npm-cache\bcda7e52-angular-ui-grid.lock
+15 silly lockFile bcda7e52-angular-ui-grid angular-ui-grid
+16 silly lockFile bcda7e52-angular-ui-grid angular-ui-grid
+17 verbose addNamed [ 'angular-ui-grid', '' ]
+18 verbose addNamed [ null, '*' ]
+19 silly lockFile 7f4b9f0e-angular-ui-grid angular-ui-grid@
+20 verbose lock angular-ui-grid@ C:\Users\pbalha\AppData\Roaming\npm-cache\7f4b9f0e-angular-ui-grid.lock
+21 silly addNameRange { name: 'angular-ui-grid', range: '*', hasData: false }
+22 verbose request where is /angular-ui-grid
+23 verbose request registry https://registry.npmjs.org/
+24 verbose request id d7e8974235428c75
+25 verbose url raw /angular-ui-grid
+26 verbose url resolving [ 'https://registry.npmjs.org/', './angular-ui-grid' ]
+27 verbose url resolved https://registry.npmjs.org/angular-ui-grid
+28 verbose request where is https://registry.npmjs.org/angular-ui-grid
+29 info trying registry request attempt 1 at 23:08:54
+30 http GET https://registry.npmjs.org/angular-ui-grid
+31 http 404 https://registry.npmjs.org/angular-ui-grid
+32 verbose headers { date: 'Tue, 24 Feb 2015 17:38:56 GMT',
+32 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+32 verbose headers   'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=0',
+32 verbose headers   'content-length': '52',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   age: '0',
+32 verbose headers   'x-served-by': 'cache-sn88-SIN',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1424799535.850580,VS0,VE982',
+32 verbose headers   'keep-alive': 'timeout=10, max=50',
+32 verbose headers   connection: 'Keep-Alive' }
+33 silly registry.get cb [ 404,
+33 silly registry.get   { date: 'Tue, 24 Feb 2015 17:38:56 GMT',
+33 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+33 silly registry.get     'content-type': 'application/json',
+33 silly registry.get     'cache-control': 'max-age=0',
+33 silly registry.get     'content-length': '52',
+33 silly registry.get     'accept-ranges': 'bytes',
+33 silly registry.get     via: '1.1 varnish',
+33 silly registry.get     age: '0',
+33 silly registry.get     'x-served-by': 'cache-sn88-SIN',
+33 silly registry.get     'x-cache': 'MISS',
+33 silly registry.get     'x-cache-hits': '0',
+33 silly registry.get     'x-timer': 'S1424799535.850580,VS0,VE982',
+33 silly registry.get     'keep-alive': 'timeout=10, max=50',
+33 silly registry.get     connection: 'Keep-Alive' } ]
+34 silly lockFile 7f4b9f0e-angular-ui-grid angular-ui-grid@
+35 silly lockFile 7f4b9f0e-angular-ui-grid angular-ui-grid@
+36 error 404 404 Not Found: angular-ui-grid
+36 error 404
+36 error 404 'angular-ui-grid' is not in the npm registry.
+36 error 404 You should bug the author to publish it
+36 error 404 It was specified as a dependency of 'Client'
+36 error 404
+36 error 404 Note that you can also install from a
+36 error 404 tarball, folder, or http url, or git url.
+37 error System Windows_NT 6.1.7601
+38 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "angular-ui-grid"
+39 error cwd E:\Unilever Support\trunk\Development\UDHD\Client
+40 error node -v v0.10.35
+41 error npm -v 1.4.28
+42 error code E404
+43 verbose exit [ 1, true ]

@@ -1,0 +1,61 @@
+<div>
+  <div class = "div_heading_shadow">GPS Site Ownership</div>
+  <div></div>
+  
+  <form name="form">
+    
+		<input class="btn"  type="button" ng-click="refreshData()" value="Refresh">
+		<input  class="btn" type="button" ng-click="clearFilter()" value="Clear Filter">
+		<input  class="btn" type="button" ng-click="previous()" value="<<">
+		<input  class="btn" type="button" ng-click="next()" value=">>">
+		<input class="textbox" type="text" ng-model="name" ng-change="searchName()" placeholder="Type to search by any column" >
+		<div class="div_text_shadow"><span>  Out of {{count}}
+			showing {{pageStart + 1}} to  {{pageEnd}}  </span></div>
+		<div ng-show="isProcessing">
+                <span>Processing ...</span>
+        </div>
+		
+		<div class="CSSTableGenerator" >
+		    <table>
+		    	<tr>
+	    		<td ng-click = "sortData(['Site URL'])" style="width:150px;">Site URL</td>
+	    		<td ng-click = "sortData(['Brand'])" style="width:150px;">Brand</td>
+	    		<td ng-click = "sortData(['Primary Owner'])" style="width:150px;">Primary Owner</td>
+	    		<td ng-click = "sortData(['Secondry Owner'])" style="width:150px;">Secondry Owner</td>
+	    		<td ng-click = "sortData(['URL Type'])" style="width:150px;">URL Type</td>
+	    		<td ng-click = "sortData(['Site Status'])" style="width:150px;">Site Status</td>
+	    		<td ng-click = "sortData(['Platform'])" style="width:150px;">Platform</td>
+	    		<td ng-click = "sortData(['Country'])" style="width:150px;">Country</td>
+	    		<td ng-click = "sortData(['Tier'])" style="width:150px;">Tier</td>
+	    		<td ng-click = "sortData(['GPS Supported'])" style="width:150px;">GPS Supported</td>
+	    		<td ng-click = "sortData(['Brand-Super Category'])" style="width:150px;">Brand-Super Category</td>
+	    		<td ng-click = "sortData(['Brand-Sub Category'])" style="width:150px;">Brand-Sub Category</td>
+	    		
+	    	</tr>
+		      <tr ng-repeat="dataRow in report">
+		          <td style="width:150px;">
+		          	<a target="blank"href="http://{{dataRow['Site URL']}}">{{dataRow['Site URL']}}</a></td>
+		          <td ng-click = "getdataByAssignedTo(['Brand'],'{{dataRow['Brand']}}')" style="width:150px;">{{dataRow['Brand']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Primary Owner'],'{{dataRow['Primary Owner']}}')" style="width:150px;">{{dataRow['Primary Owner']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Secondry Owner'],'{{dataRow['Secondry Owner']}}')" style="width:150px;">{{dataRow['Secondry Owner']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['URL Type'],'{{dataRow['URL Type']}}')" style="width:150px;">
+		          	{{dataRow['URL Type']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Site Status'],'{{dataRow['Site Status']}}')" style="width:150px;">
+		          	{{dataRow['Site Status']}}</td>
+
+		          <td ng-click = "getdataByAssignedTo(['Platform'],'{{dataRow['Platform']}}')" style="width:150px;">{{dataRow['Platform']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Country'],'{{dataRow['Country']}}')" style="width:150px;">{{dataRow['Country']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Tier'],'{{dataRow['Tier']}}')" style="width:150px;">{{dataRow['Tier']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['GPS Supported'],'{{dataRow['GPS Supported']}}')" style="width:150px;">{{dataRow['GPS Supported']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Brand-Super Category'],'{{dataRow['Brand-Super Category']}}')" style="width:150px;">{{dataRow['Brand-Super Category']}}</td>
+		          <td ng-click = "getdataByAssignedTo(['Brand-Sub Category'],'{{dataRow['Brand-Sub Category']}}')" style="width:150px;">{{dataRow['Brand-Sub Category']}}</td>
+		          
+
+		      </tr>
+		    </table>
+	    </div>
+	    <div class="div_text_shadow"><span>  Out of {{count}}
+			showing {{pageStart + 1}} to  {{pageEnd}}  </span></div>
+	  	<input  class="btn" type="button" ng-click="previous()" value="<<">
+		<input  class="btn" type="button" ng-click="next()" value=">>">
+</div>
